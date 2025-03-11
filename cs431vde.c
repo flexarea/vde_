@@ -18,8 +18,8 @@ receive_ethernet_frame(int fd, void *buf)
 {
     uint16_t nbo_len, len;
 
-    read(fd, &nbo_len, 2);
-    len = ntohs(nbo_len);
+    read(fd, &nbo_len, 2); //read network byte order
+    len = ntohs(nbo_len); //convert to host byte order
     read(fd, buf, len);
 
     return len;

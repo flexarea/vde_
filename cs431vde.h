@@ -4,6 +4,7 @@
 
 #include <stdlib.h>
 #include <stdint.h>
+#include <unistd.h>
 
 int connect_to_vde_switch(int fds[2], char *cmd[]);
 ssize_t receive_ethernet_frame(int fd, void *buf);
